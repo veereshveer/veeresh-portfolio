@@ -1,60 +1,47 @@
 import { motion } from "framer-motion"
 import { resumeData } from "../data/resumeData"
 
-export default function Hero() {
+export default function Hero(){
 
-return (
+return(
 
-<section className="min-h-screen flex items-center justify-center text-center relative z-10 px-6">
+<section className="min-h-screen flex items-center justify-center text-center">
 
 <motion.div
-initial={{opacity:0,y:60}}
+initial={{opacity:0,y:50}}
 animate={{opacity:1,y:0}}
 transition={{duration:1}}
-className="bg-white/10 backdrop-blur-lg border border-white/20 p-10 rounded-2xl shadow-xl max-w-2xl"
+className="bg-white/10 backdrop-blur p-10 rounded-2xl"
 >
 
-{/* Profile Image */}
-
 <img
-src="/profile.jpg"
-alt="Veeresh Profile"
-className="w-40 h-40 rounded-full mx-auto mb-6 border-4 border-white shadow-lg"
+src="/veeresh-portfolio/profile.jpg"
+className="w-40 h-40 rounded-full mx-auto mb-6"
 />
 
-{/* Name */}
+<h1 className="text-5xl font-bold">{resumeData.name}</h1>
 
-<h1 className="text-5xl font-bold">
-{resumeData.name}
-</h1>
-
-{/* Title */}
-
-<p className="text-2xl text-primary mt-3">
+<p className="text-xl text-primary mt-3">
 {resumeData.title}
 </p>
 
-{/* Summary */}
-
-<p className="mt-6 text-gray-300 leading-relaxed">
+<p className="mt-6 text-gray-300 max-w-xl">
 {resumeData.summary}
 </p>
-
-{/* Buttons */}
 
 <div className="mt-8 flex justify-center gap-4">
 
 <a
-href="/resume.pdf"
+href="/veeresh-portfolio/resume.pdf"
 download
-className="px-6 py-3 bg-primary rounded-lg hover:scale-105 transition"
+className="px-6 py-3 bg-primary rounded"
 >
 Download Resume
 </a>
 
 <a
 href="mailto:veereshr87@gmail.com"
-className="px-6 py-3 border border-white rounded-lg hover:bg-white hover:text-black transition"
+className="px-6 py-3 border rounded"
 >
 Contact Me
 </a>
@@ -66,5 +53,4 @@ Contact Me
 </section>
 
 )
-
 }
